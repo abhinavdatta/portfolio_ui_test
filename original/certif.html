@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Abhinav Datta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="certif/certif.css">
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header id="nav">
+        <a href="index.html" class="logo">AD</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="certif.html" class="active">Certs</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button id="menu-toggle" aria-label="Open Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu">
+        <button id="menu-close" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="certif.html">Certifications</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="certs-section">
+            <div class="certs-header">
+                <h2>Certifications</h2>
+                <div class="terminal-buttons">
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                    <span class="close"></span>
+                </div>
+            </div>
+            <p class="section-subtitle">Click on the certificates for more details</p>
+            <div id="certs-container" class="certs-tiles-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Abhinav Datta</p>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <div id="cert-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                </div>
+        </div>
+    </div>
+
+    <script id="cert-data" type="application/json">
+    [
+        {
+            "title": "Deloitte Australia - Cyber Job Simulation",
+            "issuer": "Forage",
+            "date": "Apr 2026",
+            "credentialId": "uwfh3eXgCkXhGeG",
+            "thumbnail": "certif/cert-thumbnails/deloitte.jpg",
+            "url": "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_69c227268211334329292a41_1775654833656_completion_certificate.pdf",
+            "description": "Completed a realistic cyber simulation covering threat hunting, assessing cloud security frameworks, and proposing robust mitigation strategies for enterprise-level networks."
+        },
+        {
+            "title": "Time-Frequency Analysis",
+            "issuer": "MATLAB®UCL",
+            "date": "Mar 2026",
+            "thumbnail": "certif/cert-thumbnails/time-frequency.jpg",
+            "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=e8b6df26-0edc-4434-ab27-bd5446d2be12&"
+        },
+        {
+            "title": "Spectral Analysis Techniques",
+            "issuer": "MATLAB®UCL",
+            "date": "Mar 2026",
+            "thumbnail": "certif/cert-thumbnails/spectral-analysis.jpg",
+            "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=adef196c-2b90-4090-a40a-1eb6b5c55bf5&https://matlabacademy.mathworks.com/progress/share/certificate.html?id=adef196c-2b90-4090-a40a-1eb6b5c55bf5&"
+        },
+        {
+            "title": "C Essentials 2",
+            "issuer": "Cisco Networking Academy",
+            "date": "Jul 2025",
+            "thumbnail": "certif/cert-thumbnails/c-essentials2.jpg",
+            "url": "https://www.netacad.com/s/ff9e491c-49be-4734-803e-a79e6e83dab1/users/2d5b31ca-7b31-4a63-8895-4c56f13f6a2c/_certificate_abhi07janamaddi-gmail-com_2c1d729e-6451-47c0-9e1d-95aecbd592f8.pdf?Expires=1780149369&Signature=cwQ38dlT8KDM0fzAAzGFzyfBmcadrFbKEpnYaqQQ0DjhGnBtRVmH9ur~S8m86NBDiz2Ag268YcfOwU30h526pTGiTg6yMXniI6iPL85pJ-U~b4Gj9vlOuaRKlZDBEZ-dfEF~lI3qh1168H1zlCQeN7o8QEBHMfkmA8R~-TVuX8WbkAezeTihV9rNPeeFWg3J-5pLbqqS7wQoSBOt0w~6jcidPY5RTupxbWWHfLGExSE6h1tJUx3JR5Y1o5nGISuzGx3LAVnz42p9wjGWO3yR1t~bP3~m8fy2FjotoW8Xuf5HjJVD5TAluzyuuP3PZLpv95oaroJQZxOJUtqS38R4Tw__&Key-Pair-Id=K2KLPFOPQWYG51#view=Fit&toolbar=0&statusbar=0&messages=0&navpanes=0&scrollbar=0"
+        },
+        {
+            "title": "C Essentials 1",
+            "issuer": "Cisco Networking Academy",
+            "date": "Jul 2025",
+            "thumbnail": "certif/cert-thumbnails/c-essentials1.jpg",
+            "url": "https://www.netacad.com/s/ff9e491c-49be-4734-803e-a79e6e83dab1/users/2d5b31ca-7b31-4a63-8895-4c56f13f6a2c/_certificate_abhi07janamaddi-gmail-com_d9620ab5-fcbf-407a-9118-3ab3472a1671.pdf?Expires=1780149546&Signature=V4PHETdHxcX3poq7VsUMbzEYIgC8p0ZEbgNdAn2G1nSxckfuERz4XTgF21fK0wnOtg0pGAm1tzsYn5xuBFNiNTGLl-~rjOjbBWs-WuP0JTNsRhxnZtCLgE49WITof05BYnmK4rOZ~Br8Sp5iR6XWF65C-n8gp8VpupwgqwwwuUMdnuqL2zRPtFA5cmPRvams2rxghMhokfcBpOqxjQmO0XukuD-6PkvpXZtQzEp9u3x~zB60eiGF-I-M5oADfLJ5Xq5MW4zv0qwMpr8xo38Mx3ZpNyIxW6YqwsF35zJJQl-3wPwehYdU5wTW70vLo9qinFthKhU87zAIR5u~U0ZOCg__&Key-Pair-Id=K2KLPFOPQWYG51#view=Fit&toolbar=0&statusbar=0&messages=0&navpanes=0&scrollbar=0"        },
+        {
+            "title": "Python Essentials 1",
+            "issuer": "Cisco Networking Academy",
+            "date": "Apr 2025",
+            "thumbnail": "certif/cert-thumbnails/python-essentials1.jpg",
+            "url":"https://www.netacad.com/s/ff9e491c-49be-4734-803e-a79e6e83dab1/users/2d5b31ca-7b31-4a63-8895-4c56f13f6a2c/Python_Essentials_1_certificate_abhi07janamaddi-gmail-com_abf83d3f-678f-4295-b6d5-6b30ba9720be.pdf?Expires=1780149716&Signature=Bz7irv6JdVZCKOPt68oDa7FaYxs2cQUX1170uRZuSEOBgzkiJ0E3-WC59sspOiNF0Wis0WA1uWl552Q7JLzeMMhEargNmz3xAG86mQ4j0Ku6reiDZb6~JUrHjycTw7hRXbLjK6KYXig1ywxQ0Jo1l2fWFCn20fS9F4FyNJQv2cob03XlsR0IfBBU3AhSdDrYFVE2HtBfIFzffIAH0cabGGljzFdJ9xFrbeg2i~wPAaf-mOg0XmQiBlnFz-dZgI5bhtxmZwRZKPDt35AqUivbEgXO2yjxttR99yEuiqa30QpEuFuXBump5VfvKQraffwi-2c278JtYIKtD8h6e0offg__&Key-Pair-Id=K2KLPFOPQWYG51#view=Fit&toolbar=0&statusbar=0&messages=0&navpanes=0&scrollbar=0"
+        },
+        {
+            "title": "Python Essentials 2",
+            "issuer": "Cisco Networking Academy",
+            "date": "Oct 2024",
+            "thumbnail": "certif/cert-thumbnails/python-essentials2.jpg",
+            "url":"https://www.netacad.com/s/ff9e491c-49be-4734-803e-a79e6e83dab1/users/2d5b31ca-7b31-4a63-8895-4c56f13f6a2c/Python_Essentials_2_certificate_abhi07janamaddi-gmail-com_84b0dd37-12a1-4370-9554-1fca8850a47c.pdf?Expires=1780149673&Signature=NQppqDm-7goNQcjKX0tKt0RHamRSZwgLreVZ87fXOb9pVUBVe3Ec54eNes~EDEoDw2aLya60NqyWoj7-HvPXy7FwT8~fJPB8-k4Kku-bbgT00N4gz25bZLV399wUK1PVnTiORVlt6K80stEWVE-uaZALwHc5UAGVR15mTawF83uCw9qWyjHy7lo12TftVaHEYcKwsjC0HOSLN-C6U5aniuc4en9oU3QDM9qfSI1EPpchpk1CzMaBRWwjqmEPJrUC-oIoPjWCqZ63b2NePN93fErFDNAwf3YkseOplWppW4ciPmunqnC2N0bt0lx2bjSvoDCVtSkwDeJoN-Hzw2uroA__&Key-Pair-Id=K2KLPFOPQWYG51#view=Fit&toolbar=0&statusbar=0&messages=0&navpanes=0&scrollbar=0"
+        },
+        {
+            "title": "Ethical Hacking: Windows Exploitation Basics",
+            "issuer": "Udemy",
+            "date": "May 2025",
+            "credentialId":"UC-9793117d-9068-4604-9965-76c0d2b3a274",
+            "thumbnail": "certif/cert-thumbnails/ethical-hacking-windows.jpg",
+            "url":"https://www.udemy.com/certificate/UC-9793117d-9068-4604-9965-76c0d2b3a274/"
+        },
+        {
+            "title": "Ethical Hacking: Linux Privilege Escalation",
+            "issuer": "Udemy",
+            "date": "May 2025",
+            "credentialId":"UC-edef3f02-cc7f-4a02-9db8-eaac7f9f832c",
+            "thumbnail": "certif/cert-thumbnails/ethical-hacking-linux.jpg",
+            "url":"https://www.udemy.com/certificate/UC-edef3f02-cc7f-4a02-9db8-eaac7f9f832c/"
+        },
+        {
+            "title": "Problem Solving with C programming language",
+            "issuer": "Udemy",
+            "date": "Mar 2025",
+            "credentialId": "UC-0a2cd611-369c-4530-9a20-b4b62627467e",
+            "thumbnail": "certif/cert-thumbnails/problem-solving-c.jpg",
+            "url":"https://www.udemy.com/certificate/UC-0a2cd611-369c-4530-9a20-b4b62627467e/"
+        },
+        {
+            "title": "STEP-Certificate for English Language Proficiency",
+            "issuer": "STEP-The HINDU",
+            "date": "May 2025",
+            "credentialId": "SP/20250527040609/101142085",
+            "thumbnail": "certif/cert-thumbnails/step-certificate.jpg",
+            "url":""
+        },
+        {
+            "title": "Scientific Computing with Python",
+            "issuer": "FreeCodeCamp",
+            "date": "Aug 2024",
+            "thumbnail": "certif/cert-thumbnails/freecodecamp.png",
+            "url":"https://www.freecodecamp.org/certification/abhinavdatta/scientific-computing-with-python-v7"
+        },
+         {
+            "title": "Quantum Fundamentals",
+            "issuer": "The Wiser",
+            "date": "Jan 2026",
+            "thumbnail": "certif/cert-thumbnails/wiser.jpg",
+            "url":""
+        }
+    ]
+    </script>
+
+    <script src="certif/certif.js"></script>
+</body>
+</html>

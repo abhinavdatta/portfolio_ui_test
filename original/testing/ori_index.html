@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Datta | ECE Student & Developer</title>
+    <meta name="description" content="Portfolio of Abhinav Datta, an ECE student passionate about Embedded Systems, Web Development, and AI.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="images/png" href="bunny.png">
+</head>
+<body>
+
+    <!-- 1. Terminal Boot Sequence Preloader -->
+    <div id="preloader">
+        <div class="terminal">
+            <p id="boot-text"></p>
+            <span class="cursor-block">_</span>
+        </div>
+    </div>
+
+    <!-- 2. Top Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <header id="nav">
+        <a href="#hero" class="logo">AD</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="menu-toggle" aria-label="Open Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+        <button id="menu-close" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="reveal">
+            <p class="hero-greeting">Hi there, I'm</p>
+            <h1>Abhinav Datta</h1>
+            <p class="hero-sub"><span id="typed"></span><span class="cursor">|</span></p>
+            <p class="hero-desc">ECE Student passionate about technology and problem solving. Building both hardware and software solutions.</p>
+            <div class="hero-links">
+                <a href="https://github.com/abhinavdatta/" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/NeoTactix" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X / Twitter
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <h2>About Me</h2>
+            <p>I'm Abhinav Datta — an ECE student passionate about technology and problem solving. I enjoy working across the stack, from embedded systems to web development, and I'm always exploring new technologies.</p>
+            <ul class="about-list">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Currently working on <strong>small web projects & exploring electronics</strong></span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Currently learning <strong>C/C++, DSA, and Embedded Systems</strong></span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Interests <strong>Embedded Systems, AI, Web Dev, Digital Electronics</strong></span>
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Goal <strong>To become a skilled engineer building hardware & software solutions</strong></span>
+                </li>
+            </ul>
+            <div class="stats">
+                <div><span>77</span><br>Repos</div>
+                <div><span>6+</span><br>Languages</div>
+                <div><span>ECE</span><br>Core</div>
+            </div>
+            
+            <!-- Live GitHub Contribution Graph -->
+            <div class="github-graph">
+                <h3>Recent GitHub Activity</h3>
+                <img src="https://ghchart.rshah.org/0ea5e9/abhinavdatta" alt="Abhinav's Github Chart">
+            </div>
+        </section>
+        <div align="center">
+            <p align="center">
+            <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=abhinavdatta&theme=tokyonight" height="180em" />
+            <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=abhinavdatta&theme=tokyonight" height="180em" />
+            </p>
+        </div>
+        <!-- Experience / Internships Section -->
+        <section id="experience" class="reveal">
+            <h2>Experience</h2>
+            <div class="timeline">
+                
+                <!-- Internship Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Software Engineering Intern</h3>
+                            <span class="timeline-date">May 2026 – Present</span>
+                        </div>
+                        <p class="timeline-company">Uptricks Services Pvt. Ltd. • Pune, India (Remote)</p>
+                        <ul class="timeline-desc">
+                            <li>Improved software module reliability by debugging logic errors across 3 active feature modules, reducing reported defects by 20% within the first month.</li>
+                            <li>Strengthened code quality by implementing structured testing and validation checks, ensuring 100% of assigned modules met functional specifications before release.</li>
+                            <li>Applied systematic problem-solving to identify root causes of application failures, demonstrating debugging discipline transferable to hardware verification workflows.</li>
+                        </ul>
+                        <div class="tags small">
+                            <span>Debugging</span><span>Testing</span><span>Software Development</span><span>Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>IoT & Embedded Systems Intern</h3>
+                            <span class="timeline-date">Apr 2026 – May 2026</span>
+                        </div>
+                        <p class="timeline-company">Upskill Campus / UniConverge Technologies • Vijayawada, India</p>
+                        <ul class="timeline-desc">
+                            <li>Designed and implemented a Smart Industrial Monitoring System using ESP8266 NodeMCU, DHT11, and MQ-2 sensors to track temperature, humidity, and gas levels in real time.</li>
+                            <li>Integrated sensor data with the Blynk Cloud platform, enabling remote dashboards and instant alerts when abnormal conditions were detected.</li>
+                            <li>Validated system performance through structured test cases, achieving stable Wi-Fi connectivity and <2s alert response time across all monitored parameters.</li>
+                            <li>Enhanced project scalability by documenting modular design flow, supporting easy integration of additional sensors and IoT protocols.</li>
+                            <li>Gained hands-on experience in embedded programming, IoT communication protocols (MQTT/HTTP), and cloud-based monitoring, strengthening industrial IoT application skills.</li>
+                        </ul>
+                        <div class="tags small">
+                            <span>ESP8266</span><span>IoT</span><span>MQTT</span><span>Embedded Systems</span><span>Blynk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Content Writer Intern</h3>
+                            <span class="timeline-date">Apr 2026 • 2 weeks</span>
+                        </div>
+                        <p class="timeline-company">InAmigos Foundation (IAF) • Remote</p>
+                        <p class="timeline-desc">
+                            Delivered all assigned articles ahead of deadline, demonstrating strong time management and technical writing skills.
+                        </p>
+                        <div class="tags small">
+                            <span>Technical Writing</span><span>Content Creation</span><span>Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Digital Design & Verification Intern</h3>
+                            <span class="timeline-date">Jan 2025 – Mar 2025</span>
+                        </div>
+                        <p class="timeline-company">EdiGlobe • Vijayawada, India (Remote)</p>
+                        <ul class="timeline-desc">
+                            <li>Accelerated simulation debug cycles by 30% by developing structured SystemVerilog testbenches to verify combinational and sequential logic across 3 digital circuit designs.</li>
+                            <li>Improved functional verification coverage to 90%+ by applying constrained-random stimulus techniques to validate logic gate behaviour against defined functional specifications.</li>
+                            <li>Reduced simulation error rate by 25% by systematically troubleshooting Verilog HDL models through waveform analysis, resolving timing and logic faults across all project milestones.</li>
+                            <li>Delivered all verification tasks 100% on schedule by following a structured test plan aligned with standard VLSI design verification flows.</li>
+                        </ul>
+                        <div class="tags small">
+                            <span>SystemVerilog</span><span>Verilog</span><span>VLSI</span><span>Verification</span><span>UVM</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="reveal">
+            <h2>Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="tags">
+                        <span>C</span><span>C++</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Tools & Platforms</h3>
+                    <div class="tags">
+                        <span>Git</span><span>GitHub</span><span>VS Code</span><span>Linux</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Domains</h3>
+                    <div class="tags">
+                        <span>Embedded Systems</span><span>Web Development</span><span>Digital Electronics</span><span>AI & Modern Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="reveal">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/abhinavdatta/Home-Automation-System" target="_blank" rel="noopener" class="project-card">
+                    <h3>Home Automation System <span>→</span></h3>
+                    <p>Hardware and software integration for automating home environments.</p>
+                    <p>Created for Hackathon Event</p>
+                    <div class="tags small"><span>Electronics</span><span>Embedded</span><span>C++</span></div>
+                </a>
+                <a href="https://github.com/abhinavdatta/personal-ai" target="_blank" rel="noopener" class="project-card">
+                    <h3>Personal AI <span>→</span></h3>
+                    <p>Python-based AI tool (Unfinished). Built for fun</p>
+                    <p>Want to build your own? Learn it from HuggingFace website. It's free </p>
+                    <div class="tags small"><span>Python</span><span>AI</span></div>
+                </a>
+                <a href="https://github.com/abhinavdatta/engineering-notes" target="_blank" rel="noopener" class="project-card">
+                    <h3>Engineering Notes <span>→</span></h3>
+                    <p>Web-based notes and resources for engineering concepts.</p>
+                    <p>Built it.So that I can organize my class notes and files inorder per semester.</p>
+                    <div class="tags small"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                </a>
+            </div>
+            <a href="https://github.com/abhinavdatta?tab=repositories" target="_blank" rel="noopener" class="view-all">View all repos →</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="reveal">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out for collaborations, opportunities, or just a chat.</p>
+            <a href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener" class="contact-btn">LinkedIn →</a>
+            <a href="https://github.com/abhinavdatta" target="_blank" rel="noopener" class="contact-btn secondary" style="background: transparent; border: 1px solid #0ea5e9; color: #0ea5e9; margin-left: 10px;">GitHub →</a>
+            <a href="https://x.com/NeoTactix" target="_blank" rel="noopener" class="contact-btn secondary" style="background: transparent; border: 1px solid #0ea5e9; color: #0ea5e9; margin-left: 10px;">X(formerly Twitter) →</a>
+        </section>
+    </main>
+
+
+    
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Abhinav Datta</p>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close" aria-label="Close Modal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <iframe id="resume-iframe" src="" title="Resume Viewer"></iframe>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <button id="resume-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Resume
+    </button>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

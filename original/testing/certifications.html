@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Abhinav Datta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.7;
+        }
+
+        /* Light theme */
+        [data-theme="light"] body {
+            background: #f5f5f5;
+            color: #171717;
+        }
+
+        [data-theme="light"] .cert-tile {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .cert-title {
+            color: #171717;
+        }
+
+        [data-theme="light"] .section-subtitle {
+            color: #525252;
+        }
+
+        [data-theme="light"] #nav {
+            background: rgba(245, 245, 245, 0.85);
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .nav-links a {
+            color: #525252;
+        }
+
+        [data-theme="light"] .nav-links a:hover,
+        [data-theme="light"] .nav-links a.active {
+            color: #0284c7;
+        }
+
+        [data-theme="light"] .logo {
+            color: #0284c7;
+        }
+
+        [data-theme="light"] footer {
+            border-top-color: rgba(0, 0, 0, 0.08);
+            color: #737373;
+        }
+
+        /* Navigation */
+        #nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0ea5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #a3a3a3;
+            transition: color 0.3s;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0ea5e9;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #0ea5e9;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        #theme-toggle {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #a3a3a3;
+            cursor: pointer;
+            padding: 0.35rem 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        #theme-toggle:hover {
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+
+        #menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #e5e5e5;
+            cursor: pointer;
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #mobile-menu.open {
+            display: flex;
+        }
+
+        #menu-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: #e5e5e5;
+            cursor: pointer;
+        }
+
+        #mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        #mobile-menu li {
+            margin: 1.5rem 0;
+        }
+
+        #mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #a3a3a3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        #mobile-menu a:hover {
+            color: #0ea5e9;
+        }
+
+        /* Main content */
+        .certs-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 3px;
+            background: #0ea5e9;
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            margin-top: -0.5rem;
+        }
+
+        /* Certifications grid */
+        .certs-tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-tile {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-tile:hover {
+            border-color: #0ea5e9;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .cert-thumb {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%);
+            padding: 1.8rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cert-thumb svg {
+            width: 60px;
+            height: 60px;
+            color: #0ea5e9;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .cert-info {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .cert-issuer {
+            font-size: 0.8rem;
+            color: #0ea5e9;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .cert-date {
+            font-size: 0.7rem;
+            color: #737373;
+            margin-bottom: 0.8rem;
+        }
+
+        .cert-credential {
+            margin-top: auto;
+            font-size: 0.75rem;
+        }
+
+        .cert-credential span {
+            color: #525252;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: #525252;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer a {
+            color: #525252;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #0ea5e9;
+        }
+
+        /* Back to top */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 90;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e5e5e5;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            background: #0ea5e9;
+            border-color: #0ea5e9;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+            z-index: 101;
+            transition: width 0.1s linear;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            #menu-toggle {
+                display: block;
+            }
+            .certs-section {
+                padding: 5rem 1.5rem 3rem;
+            }
+            .certs-tiles-grid {
+                gap: 1rem;
+            }
+        }
+
+        /* Reveal animation */
+        .cert-tile {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .cert-tile.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header id="nav">
+        <a href="index.html" class="logo">AD</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="certifications.html" class="active">Certs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button id="menu-toggle" aria-label="Open Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu">
+        <button id="menu-close" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="certs-section">
+            <h2>📜 Certifications</h2>
+            <p class="section-subtitle">Professional credentials in cybersecurity, programming, signal processing & more</p>
+            <div id="certs-container" class="certs-tiles-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Abhinav Datta</p>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="certifications.html">All Certifications</a>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // Certifications data
+        const certifications = [
+            { title: "Deloitte Australia - Cyber Job Simulation", issuer: "Forage", date: "Apr 2026", credentialId: "uwfh3eXgCkXhGeG" },
+            { title: "Time-Frequency Analysis", issuer: "MATLAB®UCL", date: "Mar 2026" },
+            { title: "Spectral Analysis Techniques", issuer: "MATLAB®UCL", date: "Mar 2026" },
+            { title: "C Essentials 2", issuer: "Cisco Networking Academy", date: "Jul 2025" },
+            { title: "Python Essentials 1", issuer: "Cisco Networking Academy", date: "Apr 2025" },
+            { title: "Python Essentials 2", issuer: "Cisco Networking Academy", date: "Oct 2024" },
+            { title: "Ethical Hacking: Windows Exploitation Basics", issuer: "Udemy", date: "May 2025" },
+            { title: "Ethical Hacking: Linux Privilege Escalation", issuer: "Udemy", date: "May 2025" },
+            { title: "STEP Certificate for English Language Proficiency", issuer: "Udemy", date: "May 2025" },
+            { title: "Problem Solving with C programming language", issuer: "Udemy", date: "Mar 2025" },
+            { title: "STEP-Certificate for English Language Proficiency", issuer: "Udemy", date: "May 2025" }
+        ];
+
+        function renderCertificates() {
+            const container = document.getElementById('certs-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+            
+            certifications.forEach(cert => {
+                const tile = document.createElement('div');
+                tile.className = 'cert-tile';
+                
+                const credHtml = cert.credentialId ? `<span>ID: ${cert.credentialId}</span>` : `<span>Credential available on request</span>`;
+                
+                tile.innerHTML = `
+                    <div class="cert-thumb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" />
+                            <path d="M8 7H16" stroke-linecap="round"/>
+                            <path d="M8 11H14" stroke-linecap="round"/>
+                            <path d="M8 15H12" stroke-linecap="round"/>
+                            <circle cx="17.5" cy="15.5" r="2.5" />
+                            <path d="M19 17L21 19" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-title">${escapeHtml(cert.title)}</div>
+                        <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
+                        <div class="cert-date">Issued ${escapeHtml(cert.date)}</div>
+                        <div class="cert-credential">${credHtml}</div>
+                    </div>
+                `;
+                container.appendChild(tile);
+            });
+            
+            // Animate tiles
+            const tiles = document.querySelectorAll('.cert-tile');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            tiles.forEach(tile => observer.observe(tile));
+        }
+        
+        function escapeHtml(str) {
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        // Theme toggle
+        function initTheme() {
+            const toggle = document.getElementById('theme-toggle');
+            const sun = document.getElementById('theme-icon-sun');
+            const moon = document.getElementById('theme-icon-moon');
+            
+            function updateIcon(theme) {
+                if (theme === 'light') {
+                    sun.style.display = 'none';
+                    moon.style.display = 'block';
+                } else {
+                    sun.style.display = 'block';
+                    moon.style.display = 'none';
+                }
+            }
+            
+            const saved = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', saved);
+            updateIcon(saved);
+            
+            toggle.addEventListener('click', () => {
+                const cur = document.documentElement.getAttribute('data-theme');
+                const next = cur === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                updateIcon(next);
+            });
+        }
+        
+        // Mobile menu
+        function initMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openBtn = document.getElementById('menu-toggle');
+            const closeBtn = document.getElementById('menu-close');
+            openBtn.addEventListener('click', () => menu.classList.add('open'));
+            closeBtn.addEventListener('click', () => menu.classList.remove('open'));
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.remove('open'));
+            });
+        }
+        
+        // Scroll progress and back to top
+        function initScroll() {
+            const progress = document.getElementById('scroll-progress');
+            const backBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                const total = document.body.scrollHeight - window.innerHeight;
+                const percent = (window.scrollY / total) * 100;
+                progress.style.width = percent + '%';
+                
+                if (window.scrollY > 500) {
+                    backBtn.classList.add('visible');
+                } else {
+                    backBtn.classList.remove('visible');
+                }
+            });
+            
+            backBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        // Run everything
+        renderCertificates();
+        initTheme();
+        initMobileMenu();
+        initScroll();
+    </script>
+</body>
+</html>

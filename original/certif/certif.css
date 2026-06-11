@@ -1,0 +1,478 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f; /* YouTube Dark Mode Background */
+    color: #f1f1f1;
+    line-height: 1.7;
+}
+
+/* Light theme overrides (YouTube Light Mode Style) */
+[data-theme="light"] body {
+    background: #ffffff;
+    color: #0f0f0f;
+}
+
+[data-theme="light"] #nav {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-links a { color: #606060; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: #0284c7; }
+[data-theme="light"] .logo { color: #0284c7; }
+[data-theme="light"] footer { border-top-color: rgba(0, 0, 0, 0.1); color: #606060; }
+
+[data-theme="light"] .cert-title { color: #0f0f0f; }
+[data-theme="light"] .cert-issuer,
+[data-theme="light"] .cert-credential span { color: #606060; }
+[data-theme="light"] .cert-thumb { background: #e5e5e5; }
+[data-theme="light"] .fallback-icon svg { color: #aaaaaa; }
+
+/* Navigation */
+#nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0ea5e9;
+    text-decoration: none;
+}
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #aaaaaa;
+    transition: color 0.3s;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: #0ea5e9; }
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #0ea5e9;
+}
+
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+#theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 0.35rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+#theme-toggle:hover { border-color: #0ea5e9; color: #0ea5e9; }
+
+#menu-toggle { display: none; background: none; border: none; color: #f1f1f1; cursor: pointer; }
+
+/* Terminal-style window buttons */
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.terminal-buttons .close { background: #ef4444; }
+.terminal-buttons .minimize { background: #eab308; }
+.terminal-buttons .maximize { background: #22c55e; }
+
+/* Mobile menu */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(15, 15, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mobile-menu.open { display: flex; }
+#menu-close { position: absolute; top: 1.2rem; right: 2rem; background: none; border: none; color: #f1f1f1; cursor: pointer; }
+#mobile-menu ul { list-style: none; text-align: center; }
+#mobile-menu li { margin: 1.5rem 0; }
+#mobile-menu a { font-size: 1.5rem; font-weight: 500; color: #aaaaaa; text-decoration: none; transition: color 0.3s; }
+#mobile-menu a:hover { color: #0ea5e9; }
+
+/* Main content */
+.certs-section {
+    position: relative;
+    max-width: 1200px; /* Slightly wider for the grid */
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+}
+
+.certs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: rgba(20, 20, 22, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+}
+.certs-header h2 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.95rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+.certs-header .terminal-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.section-subtitle {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+    margin-top: -0.25rem;
+}
+
+/* 🔴 YouTube Style Grid & Tiles 🔴 */
+.certs-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem 1.2rem; /* More gap vertically, slightly less horizontally */
+}
+
+.cert-tile {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    cursor: pointer;
+}
+
+.cert-tile.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 16:9 Thumbnail Container */
+.cert-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #222222; /* Placeholder background */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+/* The actual image */
+.cert-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.cert-tile:hover .cert-img {
+    transform: scale(1.05); /* Subtle zoom on hover like YT */
+}
+
+/* YouTube style bottom-right timestamp overlay */
+.cert-date-overlay {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+/* Fallback SVG styling */
+.fallback-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fallback-icon svg {
+    width: 48px;
+    height: 48px;
+    color: #555555;
+}
+
+/* Info Section below the thumbnail */
+.cert-info {
+    padding: 0 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+    /* Truncate long titles to 2 lines like YouTube */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cert-issuer {
+    font-size: 0.875rem;
+    color: #aaaaaa;
+    font-weight: 400;
+    margin-bottom: 0.15rem;
+}
+
+.cert-credential {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+}
+.cert-credential span {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Footer & Utils */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+footer a { color: #aaaaaa; text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: #0ea5e9; }
+
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 90;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #f1f1f1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+#back-to-top.visible { opacity: 1; visibility: visible; }
+#back-to-top:hover { background: #0ea5e9; color: #fff; transform: translateY(-3px); }
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0ea5e9, #38bdf8); z-index: 101; transition: width 0.1s linear; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    #menu-toggle { display: block; }
+    .certs-section { padding: 5rem 1.5rem 3rem; }
+    .certs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding: 0.9rem 1rem;
+        margin-bottom: 1rem;
+    }
+    .certs-header h2 { font-size: 1.45rem; }
+    .certs-header .terminal-buttons { gap: 0.55rem; }
+    .section-subtitle { margin-bottom: 1.25rem; }
+    .certs-tiles-grid { grid-template-columns: 1fr; /* Full width on mobile */ gap: 1.5rem; }
+}
+
+/* 🔴 Modal Styling (YouTube Style) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #151515;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 12px;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-img-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the whole cert visible without cropping */
+}
+
+.modal-info {
+    padding: 2rem;
+}
+
+.modal-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.modal-desc {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Light Mode Overrides for Modal */
+[data-theme="light"] .modal-content {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .modal-info h3 {
+    color: #0f0f0f;
+}
+[data-theme="light"] .modal-desc {
+    color: #606060;
+}
+/* 🔴 Modal External Link Button Styling */
+.modal-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #0ea5e9;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal-link-btn:hover {
+    background: #0284c7;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Ensure the icon scales nicely alongside the text */
+.modal-link-btn svg {
+    width: 16px;
+    height: 16px;
+    margin-top: -1px; /* Optically centers the icon with the text */
+}
+
+/* Ensure button looks correct on light mode */
+[data-theme="light"] .modal-link-btn {
+    color: #ffffff !important; /* Forces text to stay white inside the blue button */
+}

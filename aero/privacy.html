@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Abhinav Datta</title>
+    <link rel="stylesheet" href="ori/style.css">
+    <link rel="icon" type="image/png" href="ori/bunny.png">
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header id="nav">
+        <a href="index.html" class="logo">AD</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="certif.html">Certs</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <a class="contact-btn privacy-nav-btn" href="index.html">Home</a>
+        </div>
+    </header>
+
+    <main class="policy-shell">
+        <section class="policy-window reveal active">
+            <h2>Privacy Policy</h2>
+            <span class="last-updated">Last updated: May 2026</span>
+
+            <p>This Privacy Policy describes how your personal information is collected, used, and shared when you visit the personal portfolio website of Abhinav Datta.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>This is a static portfolio website. We do not actively collect, store, or process personal data. We do not use contact forms, account logins, or data submission tools.</p>
+
+            <h3>2. Automatically Collected Information</h3>
+            <p>When you visit the site, the hosting provider may automatically record standard server logs, which may include:</p>
+            <ul>
+                <li>Your Internet Protocol (IP) address</li>
+                <li>Your browser type and version</li>
+                <li>The pages you visited and the time of your visit</li>
+                <li>The referring site that linked you here</li>
+            </ul>
+            <p>We do not have access to or control over those server logs. They are managed by the hosting provider.</p>
+
+            <h3>3. Third-Party Links & Embedded Content</h3>
+            <p>The site contains links and embedded content from external platforms, including GitHub, LinkedIn, X/Twitter, GitHub contribution charts, and GitHub summary cards.</p>
+            <p>Clicking external links will take you to third-party sites. Their privacy practices are controlled by those platforms.</p>
+
+            <h3>4. Cookies and Tracking</h3>
+            <p>We do not use cookies, web beacons, tracking pixels, or third-party analytics such as Google Analytics.</p>
+
+            <h3>5. Resume Viewer</h3>
+            <p>The resume button opens a PDF from the same site origin. No personal data is collected or tracked when you open or download the resume.</p>
+
+            <h3>6. Your Rights</h3>
+            <p>Since this site does not collect or store personal data directly, there is no visitor data to access, modify, or delete from this portfolio.</p>
+
+            <h3>7. Changes to This Policy</h3>
+            <p>This policy may be updated if the site functionality changes. Any changes will be posted on this page with an updated date.</p>
+
+            <h3>8. Contact Information</h3>
+            <p>You can reach me through these public profiles:</p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/abhinavdatta" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://x.com/NeoTactix" target="_blank" rel="noopener">X / Twitter</a></li>
+            </ul>
+
+            <a href="index.html" class="contact-btn policy-back-link">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Abhinav Datta</p>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+    <script>
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+        scrollProgress.style.width = progress + '%';
+    });
+    </script>
+</body>
+</html>
