@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Abhinav Datta</title>
+  <meta name="description" content="Privacy Policy for the portfolio website of Abhinav Datta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ori/style.css">
+  <link rel="icon" type="image/png" href="ori/bunny.png">
+  <style>
+    /* ── v2 CSS Variables ────────────────────────────────────── */
+    :root {
+      --bg: #09090b;
+      --bg-raised: #111114;
+      --fg: #fafafa;
+      --muted: #71717a;
+      --accent: #8b5cf6;
+      --accent-hover: #a78bfa;
+      --accent-muted: rgba(139, 92, 246, 0.12);
+      --card: rgba(255, 255, 255, 0.03);
+      --card-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(255, 255, 255, 0.12);
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2);
+    }
+    [data-theme="light"] {
+      --bg: #fafafa;
+      --bg-raised: #ffffff;
+      --fg: #18181b;
+      --muted: #71717a;
+      --accent: #7c3aed;
+      --accent-hover: #6d28d9;
+      --accent-muted: rgba(124, 58, 237, 0.1);
+      --card: rgba(255,255,255,0.7);
+      --card-hover: rgba(255,255,255,0.9);
+      --border: rgba(0,0,0,0.06);
+      --border-hover: rgba(0,0,0,0.12);
+      --glass: rgba(255,255,255,0.6);
+      --glass-border: rgba(0,0,0,0.06);
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    /* ── Body override ──────────────────────────────────────── */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      background: var(--bg) !important;
+      color: var(--fg) !important;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--accent-muted); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    * { scrollbar-width: thin; scrollbar-color: var(--accent-muted) transparent; }
+
+    ::selection { background: var(--accent-muted); color: var(--fg); }
+
+    /* ── v2 Background ──────────────────────────────────────── */
+    .v2-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    .v2-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity: 0.4;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 20%, transparent 70%);
+    }
+    .v2-bg::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 20%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse, var(--accent-muted), transparent 70%);
+      filter: blur(80px);
+      opacity: 0.3;
+    }
+
+    /* ── Navbar ──────────────────────────────────────────────── */
+    .navbar {
+      position: fixed !important;
+      top: 0; left: 0; right: 0;
+      z-index: 10000 !important;
+      background: var(--glass) !important;
+      backdrop-filter: blur(20px) saturate(1.4) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+      border-bottom: 1px solid var(--glass-border) !important;
+      padding: 0 1.5rem !important;
+    }
+    .nav-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.5rem;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 700;
+      font-size: 1.125rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover)) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      letter-spacing: -0.02em;
+      text-decoration: none !important;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) { .nav-links { display: flex !important; } }
+    .nav-link, .nav-links a {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.8125rem !important;
+      font-weight: 500 !important;
+      color: var(--muted) !important;
+      text-decoration: none !important;
+      border: none !important;
+      background: none !important;
+      padding: 0.25rem 0 !important;
+      transition: color 0.2s !important;
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-links a:hover { color: var(--fg) !important; }
+    .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+
+    .theme-toggle {
+      width: 2rem; height: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--glass);
+      color: var(--muted);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .theme-toggle:hover { border-color: var(--border-hover); color: var(--fg); background: var(--card); }
+    .theme-toggle svg { width: 1rem; height: 1rem; }
+
+    .hamburger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 5px;
+      background: none !important;
+      border: none !important;
+      padding: 0.5rem;
+      color: var(--muted);
+    }
+    .hamburger:hover { color: var(--fg); }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 1px;
+    }
+    @media (min-width: 768px) { .hamburger { display: none !important; } }
+
+    /* ── Mobile Menu ────────────────────────────────────────── */
+    .mobile-overlay {
+      position: fixed; inset: 0; z-index: 20000;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+    .mobile-menu {
+      position: fixed; top: 0; right: -300px; width: 280px; max-width: 85vw;
+      height: 100vh; z-index: 20001;
+      background: var(--bg-raised);
+      backdrop-filter: blur(30px);
+      border-left: 1px solid var(--glass-border);
+      padding: 4.5rem 1.5rem 2rem;
+      display: flex; flex-direction: column; gap: 0.125rem;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none; color: var(--muted);
+      font-size: 1.5rem; line-height: 1; padding: 0.25rem;
+      transition: color 0.2s;
+    }
+    .mobile-close:hover { color: var(--fg); }
+    .mobile-link {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem; font-weight: 500;
+      color: var(--muted);
+      padding: 0.625rem 0.75rem; border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .mobile-link:hover { background: var(--card); color: var(--fg); }
+
+    /* ── Privacy Page ───────────────────────────────────────── */
+    .privacy-page {
+      flex: 1;
+      padding: 5.5rem 1.5rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .privacy-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 1rem; height: 1rem; }
+    .privacy-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.375rem;
+    }
+    .last-updated {
+      color: var(--accent);
+      font-size: 0.8125rem;
+      margin-bottom: 2rem;
+      display: block;
+      font-weight: 500;
+    }
+    .privacy-glass {
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 0.75rem;
+      padding: 2rem 2.25rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .privacy-glass h2 {
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.625rem;
+      letter-spacing: -0.01em;
+    }
+    .privacy-glass h2:first-child { margin-top: 0; }
+    .privacy-glass p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+    .privacy-glass ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    .privacy-glass ul li {
+      margin-bottom: 0.375rem;
+      color: var(--muted);
+    }
+    .privacy-glass a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .privacy-glass a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.8125rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-content a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-content a:hover { color: var(--accent); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .privacy-page { padding: 4rem 1rem 2rem; }
+      .privacy-glass { padding: 1.5rem; }
+      .privacy-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- v2 Background -->
+  <div class="v2-bg" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">AD</a>
+      <div class="nav-links">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#experience" class="nav-link">Experience</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="certif.html" class="nav-link">Certs</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="menu-close">&times;</button>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#experience" class="mobile-link">Experience</a>
+    <a href="index.html#skills" class="mobile-link">Skills</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="certif.html" class="mobile-link">Certs</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Privacy Content -->
+  <div class="privacy-page">
+    <div class="privacy-container">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Back to Home
+      </a>
+
+      <h1 class="privacy-title">Privacy Policy</h1>
+      <span class="last-updated">Last updated: May 2026</span>
+
+      <div class="privacy-glass">
+
+        <h2>1. Information We Collect</h2>
+        <p>This portfolio website does not actively collect, store, or process any personal information from visitors. You can browse this site without providing any personal data. We do not require registration, login, or any form submission to access the content on this website.</p>
+
+        <h2>2. Automatically Collected Information</h2>
+        <p>When you visit this website, certain information may be collected automatically by our hosting provider and analytics tools. This may include:</p>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>Pages visited and time spent on each page</li>
+          <li>Referring website or source</li>
+          <li>Device information (screen size, device type)</li>
+        </ul>
+        <p>This information is used solely for analytical purposes to understand how visitors interact with the website and to improve the overall user experience. This data is collected in an anonymized form and cannot be used to identify you personally.</p>
+
+        <h2>3. Third-Party Links</h2>
+        <p>This website contains links to external websites and platforms, including but not limited to GitHub, LinkedIn, X (formerly Twitter), and other third-party services. Please note that these third-party websites have their own privacy policies, and we are not responsible for their content or privacy practices. We encourage you to review the privacy policies of any third-party websites you visit through links on this site.</p>
+
+        <h2>4. Cookies and Tracking</h2>
+        <p>This website may use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small data files stored on your device that help us understand how you use the website and enable certain features. You can control cookie preferences through your browser settings. Disabling cookies may affect the functionality of certain features on this website.</p>
+        <p>Any analytics or tracking services used on this website (such as Google Analytics or similar tools) operate under their respective privacy policies and terms of service.</p>
+
+        <h2>5. Resume Viewer</h2>
+        <p>This website may include an embedded resume viewer that displays a PDF document. The resume PDF is served directly and does not require you to provide any personal information to view it. No download or viewing data is collected or stored by us. However, the third-party service used to embed the PDF (if applicable) may collect usage data in accordance with their own privacy policy.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>Since we do not actively collect personal information, there is no personal data for us to share, sell, or disclose to third parties. You have the right to:</p>
+        <ul>
+          <li>Access any information that may have been automatically collected about your visit</li>
+          <li>Request deletion of any automatically collected data</li>
+          <li>Opt out of any tracking or analytics by adjusting your browser settings or using browser extensions</li>
+          <li>Contact us with any privacy-related concerns</li>
+        </ul>
+
+        <h2>7. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your privacy.</p>
+
+        <h2>8. Contact Information</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please feel free to reach out:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:abhi07janamaddi@gmail.com">abhi07janamaddi@gmail.com</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener noreferrer">linkedin.com/in/abhinav-datta-kaly</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/abhinavdatta/" target="_blank" rel="noopener noreferrer">github.com/abhinavdatta</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Abhinav Datta</p>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="certif.html">Certifications</a>
+      <a href="index.html">Portfolio Home</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      /* ── Theme toggle ──────────────────────────────────────── */
+      var html = document.documentElement;
+      var themeBtn = document.getElementById('theme-toggle');
+
+      function getStoredTheme() {
+        return localStorage.getItem('portfolio-theme');
+      }
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          html.setAttribute('data-theme', 'light');
+        } else {
+          html.removeAttribute('data-theme');
+        }
+        updateThemeIcon(theme);
+      }
+
+      function updateThemeIcon(theme) {
+        if (!themeBtn) return;
+        var sunSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        var moonSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        themeBtn.innerHTML = theme === 'light' ? moonSvg : sunSvg;
+      }
+
+      function initTheme() {
+        var stored = getStoredTheme();
+        if (stored) {
+          applyTheme(stored);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          applyTheme('light');
+        }
+      }
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+          var current = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+          var next = current === 'light' ? 'dark' : 'light';
+          applyTheme(next);
+          localStorage.setItem('portfolio-theme', next);
+        });
+      }
+
+      initTheme();
+
+      /* ── Mobile menu ────────────────────────────────────────── */
+      var hamburgerBtn = document.getElementById('hamburger-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var mobileOverlay = document.getElementById('mobile-overlay');
+      var menuCloseBtn = document.getElementById('menu-close');
+
+      function openMobileMenu() {
+        if (hamburgerBtn) hamburgerBtn.classList.add('open');
+        if (mobileMenu) mobileMenu.classList.add('open');
+        if (mobileOverlay) mobileOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        if (hamburgerBtn) hamburgerBtn.classList.remove('open');
+        if (mobileMenu) mobileMenu.classList.remove('open');
+        if (mobileOverlay) mobileOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+          if (mobileMenu && mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+      }
+
+      if (menuCloseBtn) menuCloseBtn.addEventListener('click', closeMobileMenu);
+      if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+      if (mobileMenu) {
+        var mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(function(link) {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (mobileMenu && mobileMenu.classList.contains('open')) closeMobileMenu();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Abhinav Datta</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="ori/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="ori/bunny.png">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Outer glow wrapper */
+        .error-glow-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .error-glow-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            border-radius: 40px;
+            background: radial-gradient(ellipse at 40% 50%, rgba(139, 92, 246, 0.22) 0%, rgba(6, 182, 212, 0.10) 50%, transparent 75%);
+            filter: blur(24px);
+            pointer-events: none;
+            animation: glowPulse 5s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.04); }
+        }
+
+        /* Terminal card */
+        .error-terminal {
+            position: relative;
+            width: 100%;
+            background: rgba(14, 14, 20, 0.82);
+            border: 1px solid rgba(139, 92, 246, 0.22);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow:
+                0 24px 80px rgba(0, 0, 0, 0.55),
+                0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+            backdrop-filter: blur(28px) saturate(1.3);
+            -webkit-backdrop-filter: blur(28px) saturate(1.3);
+        }
+
+        /* Traffic lights header */
+        .error-terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .error-terminal-header span {
+            width: 11px; height: 11px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .error-terminal-header .close    { background: #ff5f57; }
+        .error-terminal-header .minimize { background: #febc2e; }
+        .error-terminal-header .maximize { background: #28c840; }
+
+        .error-terminal-title {
+            margin-left: 6px;
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.03em;
+        }
+
+        /* Terminal body */
+        .error-terminal-body {
+            padding: 2rem 1.75rem 2rem;
+        }
+
+        .error-terminal-body p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.82rem;
+            font-family: 'Inter', monospace;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        .error-terminal-body .prompt { color: #8b5cf6; font-weight: 600; }
+        .error-terminal-body .cmd-arg { color: #06b6d4; }
+
+        /* Big 404 */
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 14vw, 5.5rem);
+            font-weight: 700;
+            margin: 1.1rem 0 0.2rem;
+            line-height: 1;
+            background: linear-gradient(135deg, #ffffff 20%, #8b5cf6 60%, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .error-msg {
+            font-size: 1rem !important;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85) !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .error-sub {
+            color: rgba(255, 255, 255, 0.35) !important;
+            font-size: 0.83rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Blinking cursor */
+        .error-cursor {
+            display: inline-block;
+            width: 8px; height: 1rem;
+            background: #8b5cf6;
+            vertical-align: middle;
+            margin-left: 3px;
+            border-radius: 1px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Divider */
+        .error-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 1.5rem 0;
+        }
+
+        /* Action buttons */
+        .error-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .error-actions a {
+            font-size: 0.83rem;
+            font-weight: 500;
+            padding: 0.55rem 1.1rem;
+            border-radius: 9px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .error-actions a.primary {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: #fff;
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+        }
+
+        .error-actions a.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45);
+        }
+
+        .error-actions a.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .error-actions a.secondary:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(139, 92, 246, 0.35);
+            color: #fff;
+        }
+
+        /* ── Light mode ── */
+        [data-theme="light"] .error-terminal {
+            background: rgba(255, 255, 255, 0.88);
+            border-color: rgba(124, 58, 237, 0.18);
+        }
+
+        [data-theme="light"] .error-terminal-header {
+            background: rgba(0, 0, 0, 0.03);
+            border-bottom-color: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="light"] .error-terminal-title { color: rgba(0, 0, 0, 0.3); }
+
+        [data-theme="light"] .error-terminal-body p { color: rgba(0, 0, 0, 0.4); }
+
+        [data-theme="light"] .error-msg { color: #18181b !important; }
+
+        [data-theme="light"] .error-sub { color: rgba(0, 0, 0, 0.4) !important; }
+
+        [data-theme="light"] .error-divider { background: rgba(0, 0, 0, 0.06); }
+
+        [data-theme="light"] .error-actions a.secondary {
+            background: rgba(0, 0, 0, 0.04);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: #52525b;
+        }
+
+        [data-theme="light"] .error-actions a.secondary:hover {
+            background: rgba(124, 58, 237, 0.06);
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #18181b;
+        }
+
+        [data-theme="light"] body::before { display: none; }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-glow-wrap">
+            <div class="error-terminal">
+                <div class="error-terminal-header">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                    <span class="error-terminal-title"> bash — user@portfolio:~/404</span>
+                </div>
+                <div class="error-terminal-body">
+                    <p><span class="prompt">→</span> <span class="cmd-arg">GET</span> {{requested_path}}</p>
+                    <p>HTTP/1.1 <span class="prompt">404</span> Not Found</p>
+                    <div class="error-code">404</div>
+                    <p class="error-msg">This route doesn't exist<span class="error-cursor"></span></p>
+                    <p class="error-sub">The page was moved, renamed, or never deployed to this bucket.</p>
+                    <div class="error-divider"></div>
+                    <div class="error-actions">
+                        <a href="/" class="primary">← Back to home</a>
+                        <a href="/certif.html" class="secondary">View certificates</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inherit theme from localStorage
+        (function () {
+            var t = localStorage.getItem('portfolio-theme');
+            if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhinav Datta | ECE Student &amp; Developer</title>
+  <meta name="description" content="Portfolio of Abhinav Datta — ECE student passionate about Embedded Systems, Web Development, and AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="ori/style.css" />
+  <link rel="icon" type="image/png" href="ori/bunny.png">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-spinner"></div>
+      <div class="preloader-text">Loading portfolio…</div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <nav class="nav-inner">
+        <button class="nav-logo" onclick="scrollToSection('hero')">&lt;AD/&gt;</button>
+        <div class="nav-links">
+          <button class="nav-link" data-section="about">About</button>
+          <button class="nav-link" data-section="experience">Experience</button>
+          <button class="nav-link" data-section="skills">Skills</button>
+          <button class="nav-link" data-section="projects">Projects</button>
+          <!--<button class="nav-link" data-section="certifications">Certs</button>-->
+          <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+        <div class="nav-right">
+          <a class="nav-certs" href="certif.html">Certs</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MOBILE OVERLAY & MENU -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-close" id="mobile-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <button class="mobile-link" data-section="about">About</button>
+      <button class="mobile-link" data-section="experience">Experience</button>
+      <button class="mobile-link" data-section="skills">Skills</button>
+      <button class="mobile-link" data-section="projects">Projects</button>
+      <div class="mobile-divider"></div>
+      <a class="mobile-link" href="certif.html" style="color:var(--muted)">All Certifications →</a>
+      <div class="mobile-divider"></div>
+      <button class="mobile-link" data-section="contact">Contact</button>
+    </div>
+
+    <main>
+
+      <!-- ======================== HERO ======================== -->
+      <section class="hero" id="hero">
+        <div class="hero-grid">
+          <!-- Left: Text -->
+          <div>
+            <p class="hero-greeting reveal">Hi, I'm</p>
+            <h1 class="hero-name reveal reveal-d1">Abhinav Datta</h1>
+            <div class="hero-typing reveal reveal-d2">
+              <span id="typed-text"></span><span class="cursor">|</span>
+            </div>
+            <p class="hero-tagline reveal reveal-d3">ECE Student passionate about technology and problem solving. Building both hardware and software solutions.</p>
+            <div class="hero-socials reveal reveal-d4">
+              <a class="social-btn" href="https://github.com/abhinavdatta/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+              <a class="social-btn" href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+              <a class="social-btn" href="mailto:abhi07janamaddi@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+              </a>
+            </div>
+          </div>
+          <!-- Right: Orb -->
+          <div>
+            <div class="orb-container reveal reveal-d2">
+              <div class="orb-glow"></div>
+              <div class="orb-ring orb-ring-1"></div>
+              <div class="orb-ring orb-ring-2"></div>
+              <div class="orb-ring orb-ring-3"></div>
+              <div class="orb-core"></div>
+              <div class="orb-particle orb-particle-1"></div>
+              <div class="orb-particle orb-particle-2"></div>
+              <div class="orb-particle orb-particle-3"></div>
+              <div class="orb-particle orb-particle-4"></div>
+              <div class="orb-particle orb-particle-5"></div>
+              <div class="orb-particle orb-particle-6"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== ABOUT ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="about">
+            <h2 class="section-heading reveal">About</h2>
+            <div class="about-panel reveal reveal-d1" style="margin-top:1.5rem">
+              <p class="about-bio">I'm Abhinav Datta — an ECE student passionate about technology and problem solving. I enjoy working across the stack, from embedded systems to web development, and I'm always exploring new technologies.</p>
+
+              <div class="checklist">
+                <div class="check-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Currently working on <strong>small web projects &amp; exploring electronics</strong></span>
+                </div>
+                <div class="check-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Currently learning <strong>C/C++, DSA, and Embedded Systems</strong></span>
+                </div>
+                <div class="check-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Interests: <strong>Embedded Systems, AI, Web Dev, Digital Electronics</strong></span>
+                </div>
+                <div class="check-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Goal: <strong>To become a skilled engineer building hardware &amp; software solutions</strong></span>
+                </div>
+              </div>
+
+              <div class="stats-row">
+                <div class="stat-box">
+                  <div class="stat-value">77</div>
+                  <div class="stat-label">Repos</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-value">6+</div>
+                  <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-value">ECE</div>
+                  <div class="stat-label">Core</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== EXPERIENCE ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="experience">
+            <h2 class="section-heading reveal">Experience</h2>
+            <div class="timeline" style="margin-top:2rem">
+
+              <!-- 1. Uptricks Services -->
+              <div class="timeline-item reveal reveal-d1">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <h3 class="exp-title">Software Engineering Intern</h3>
+                    <span class="exp-date">May 2026 – Present</span>
+                  </div>
+                  <p class="exp-company">Uptricks Services Pvt. Ltd. • Pune, India (Remote)</p>
+                  <ul class="exp-bullets">
+                    <li>Improved module reliability by debugging logic errors across 3 active feature modules, reducing reported defects by 20% within the first month.</li>
+                    <li>Strengthened code quality by implementing structured validation checks, ensuring 100% of assigned modules met functional specifications before release.</li>
+                    <li>Applied systematic problem-solving to identify root causes of application failures, demonstrating debugging discipline transferable to hardware verification workflows.</li>
+                  </ul>
+                  <div class="exp-tags">
+                    <span class="badge">Debugging</span>
+                    <span class="badge">Testing</span>
+                    <span class="badge">Software Development</span>
+                    <span class="badge">Problem Solving</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Upskill Campus -->
+              <div class="timeline-item reveal reveal-d2">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <h3 class="exp-title">IoT &amp; Embedded Systems Intern</h3>
+                    <span class="exp-date">Apr 2026 – May 2026</span>
+                  </div>
+                  <p class="exp-company">Upskill Campus / UniConverge Technologies • Vijayawada, India</p>
+                  <ul class="exp-bullets">
+                    <li>Designed and implemented a Smart Industrial Monitoring System using ESP8266 NodeMCU, DHT11, and MQ-2 sensors to track temperature, humidity, and gas levels in real time.</li>
+                    <li>Integrated sensor data with the Blynk Cloud platform, enabling remote dashboards and instant alerts when abnormal conditions were detected.</li>
+                    <li>Validated system performance through structured test cases, achieving stable Wi-Fi connectivity and under 2s alert response time across all monitored parameters.</li>
+                    <li>Documented a modular design flow supporting easy integration of additional sensors and IoT protocols (MQTT, HTTP).</li>
+                  </ul>
+                  <div class="exp-tags">
+                    <span class="badge">ESP8266</span>
+                    <span class="badge">IoT</span>
+                    <span class="badge">MQTT</span>
+                    <span class="badge">Embedded Systems</span>
+                    <span class="badge">Blynk</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. InAmigos Foundation -->
+              <div class="timeline-item reveal reveal-d3">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <h3 class="exp-title">Content Writer Intern</h3>
+                    <span class="exp-date">Apr 2026 • 2 weeks</span>
+                  </div>
+                  <p class="exp-company">InAmigos Foundation (IAF) • Remote</p>
+                  <ul class="exp-bullets">
+                    <li>Delivered all assigned articles ahead of deadline, demonstrating strong time management and technical writing skills.</li>
+                  </ul>
+                  <div class="exp-tags">
+                    <span class="badge">Technical Writing</span>
+                    <span class="badge">Content Creation</span>
+                    <span class="badge">Communication</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. EdiGlobe -->
+              <div class="timeline-item reveal reveal-d4">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                  <div class="exp-header">
+                    <h3 class="exp-title">Digital Design &amp; Verification Intern</h3>
+                    <span class="exp-date">Jan 2025 – Mar 2025</span>
+                  </div>
+                  <p class="exp-company">EdiGlobe • Vijayawada, India (Remote)</p>
+                  <ul class="exp-bullets">
+                    <li>Accelerated simulation debug cycles by 30% by developing structured SystemVerilog testbenches to verify combinational and sequential logic across 3 digital circuit designs.</li>
+                    <li>Improved functional verification coverage to 90%+ by applying constrained-random stimulus techniques to validate logic gate behaviour against defined functional specifications.</li>
+                    <li>Reduced simulation error rate by 25% by systematically troubleshooting Verilog HDL models through waveform analysis, resolving timing and logic faults across all project milestones.</li>
+                    <li>Delivered all verification tasks 100% on schedule by following a structured test plan aligned with standard VLSI design verification flows.</li>
+                  </ul>
+                  <div class="exp-tags">
+                    <span class="badge">SystemVerilog</span>
+                    <span class="badge">Verilog</span>
+                    <span class="badge">VLSI</span>
+                    <span class="badge">Verification</span>
+                    <span class="badge">UVM</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== SKILLS ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="skills">
+            <h2 class="section-heading reveal">Skills</h2>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem">
+
+              <!-- Left: Skill Groups -->
+              <div>
+                <div style="margin-bottom:1.5rem" class="reveal reveal-d1">
+                  <h3 class="skill-group-label">Languages</h3>
+                  <div class="skill-badges">
+                    <span class="badge">C</span><span class="badge">C++</span><span class="badge">Python</span><span class="badge">JavaScript</span><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">SystemVerilog</span><span class="badge">Verilog HDL</span>
+                  </div>
+                </div>
+                <div style="margin-bottom:1.5rem" class="reveal reveal-d2">
+                  <h3 class="skill-group-label">Tools &amp; Platforms</h3>
+                  <div class="skill-badges">
+                    <span class="badge">Git</span><span class="badge">GitHub</span><span class="badge">VS Code</span><span class="badge">Linux</span><span class="badge">Android Studio</span><span class="badge">MATLAB</span>
+                  </div>
+                </div>
+                <div class="reveal reveal-d3">
+                  <h3 class="skill-group-label">Domains</h3>
+                  <div class="skill-badges">
+                    <span class="badge">Embedded Systems</span><span class="badge">Web Development</span><span class="badge">Digital Electronics</span><span class="badge">VLSI Verification</span><span class="badge">IoT</span><span class="badge">AI &amp; Modern Tech</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Proficiency Bars -->
+              <div class="reveal reveal-d2">
+                <h3 class="prof-section-title">Proficiency</h3>
+                <div class="prof-list">
+                  <div class="prof-item">
+                    <div class="prof-item-header">
+                      <span class="prof-name">JavaScript / Web</span>
+                      <span class="prof-pct">80%</span>
+                    </div>
+                    <div class="prof-track"><div class="prof-fill" data-width="80"></div></div>
+                  </div>
+                  <div class="prof-item">
+                    <div class="prof-item-header">
+                      <span class="prof-name">Python</span>
+                      <span class="prof-pct">70%</span>
+                    </div>
+                    <div class="prof-track"><div class="prof-fill" data-width="70"></div></div>
+                  </div>
+                  <div class="prof-item">
+                    <div class="prof-item-header">
+                      <span class="prof-name">C / C++</span>
+                      <span class="prof-pct">65%</span>
+                    </div>
+                    <div class="prof-track"><div class="prof-fill" data-width="65"></div></div>
+                  </div>
+                  <div class="prof-item">
+                    <div class="prof-item-header">
+                      <span class="prof-name">SystemVerilog</span>
+                      <span class="prof-pct">20%</span>
+                    </div>
+                    <div class="prof-track"><div class="prof-fill" data-width="20"></div></div>
+                  </div>
+                  <div class="prof-item">
+                    <div class="prof-item-header">
+                      <span class="prof-name">Embedded C / IoT</span>
+                      <span class="prof-pct">65%</span>
+                    </div>
+                    <div class="prof-track"><div class="prof-fill" data-width="65"></div></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== PROJECTS ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="projects">
+            <h2 class="section-heading reveal">Featured Projects</h2>
+
+            <div class="featured-grid">
+
+              <!-- Project 1: Home Automation -->
+              <a class="window-card reveal reveal-d1" href="https://github.com/abhinavdatta/Home-Automation-System" target="_blank" rel="noopener noreferrer">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Home Automation System</span>
+                  <svg class="window-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">Hardware and software integration for automating home environments using embedded microcontrollers and sensor arrays. Built for a Hackathon event.</p>
+                  <div class="window-tags">
+                    <span class="badge">ESP8266</span><span class="badge">IoT</span><span class="badge">Blynk</span><span class="badge">C++</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Project 2: Personal AI -->
+              <a class="window-card reveal reveal-d2" href="https://github.com/abhinavdatta/personal-ai" target="_blank" rel="noopener noreferrer">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Personal AI</span>
+                  <svg class="window-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">A Python-based personal AI assistant exploring NLP fundamentals and HuggingFace model integration. An ongoing learning project.</p>
+                  <div class="window-tags">
+                    <span class="badge">Python</span><span class="badge">NLP</span><span class="badge">AI</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Project 3: Engineering Notes -->
+              <a class="window-card reveal reveal-d3" href="https://github.com/abhinavdatta/engineering-notes" target="_blank" rel="noopener noreferrer">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Engineering Notes</span>
+                  <svg class="window-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">A web-based notes and resource organiser for ECE coursework — structured by semester to keep lecture materials, formulas, and references in one place.</p>
+                  <div class="window-tags">
+                    <span class="badge">Markdown</span><span class="badge">ECE</span><span class="badge">Education</span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- GitHub Activity -->
+            <div class="gh-activity-section reveal reveal-d4">
+              <h3 class="gh-activity-heading">GitHub Activity</h3>
+              <div class="gh-activity-graph">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=abhinavdatta&bg_color=00000000&color=8b5cf6&line=8b5cf6&point=c4b5fd&area=true&hide_border=true" alt="GitHub Activity Graph" loading="lazy" />
+              </div>
+              <div class="gh-repo-grid" id="gh-repos">
+                <!-- Populated by github.js -->
+              </div>
+              <a class="view-all-link" href="https://github.com/abhinavdatta?tab=repositories" target="_blank" rel="noopener noreferrer">
+                View All Repositories
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div class="gh-stats-section reveal">
+              <div class="gh-streak">
+                <img data-gh-chart src="https://ghchart.rshah.org/8b5cf6/abhinavdatta" alt="GitHub contribution streak" loading="lazy" />
+              </div>
+            <div class="github-cards-container">
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=abhinavdatta&theme=tokyonight" alt="GitHub Stats" />
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=abhinavdatta&theme=tokyonight" alt="Top Languages" />
+            </div>
+
+          </section>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== CERTIFICATIONS ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="certifications">
+            <h2 class="section-heading reveal">Certifications</h2>
+            <p class="section-subtitle reveal reveal-d1">Click on a certificate for more details</p>
+
+            <div class="cert-featured-grid">
+
+              <!-- Cert 1 -->
+              <div class="window-card reveal reveal-d2" style="cursor:default">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Deloitte Cyber Simulation</span>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">Completed the Cyber Job Simulation on Forage, gaining hands-on experience with cybersecurity tools and practices used at Deloitte Australia.</p>
+                  <div class="window-tags">
+                    <span class="badge">Cybersecurity</span><span class="badge">Forage</span>
+                  </div>
+                  <button class="cert-view-btn" data-title="Deloitte Australia — Cyber Job Simulation" data-issuer="Forage" data-date="April 2026" data-desc="Completed a simulated cybersecurity project for Deloitte Australia through the Forage platform. Gained practical experience with industry-standard security tools, threat analysis frameworks, and incident response procedures. Explored real-world scenarios including phishing detection, network security auditing, and risk assessment methodologies used by professional consulting teams.">
+                    View Details
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cert 2 -->
+              <div class="window-card reveal reveal-d3" style="cursor:default">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Time-Frequency Analysis</span>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">Learned time-frequency analysis techniques using MATLAB, covering Fourier transforms, spectrograms, and signal decomposition methods.</p>
+                  <div class="window-tags">
+                    <span class="badge">MATLAB</span><span class="badge">Signal Processing</span>
+                  </div>
+                  <button class="cert-view-btn" data-title="Time-Frequency Analysis" data-issuer="MATLAB®UCL" data-date="March 2026" data-desc="Completed a comprehensive course on Time-Frequency Analysis through the MATLAB®UCL platform. Covered Short-Time Fourier Transform (STFT), Continuous Wavelet Transform (CWT), and Wigner-Ville Distribution. Applied these techniques to analyze non-stationary signals, including biomedical and audio data, using MATLAB's signal processing toolbox.">
+                    View Details
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cert 3 -->
+              <div class="window-card reveal reveal-d4" style="cursor:default">
+                <div class="window-titlebar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">Spectral Analysis Techniques</span>
+                </div>
+                <div class="window-body">
+                  <p class="window-desc">Studied spectral analysis methods including FFT, power spectral density estimation, and practical applications in engineering systems.</p>
+                  <div class="window-tags">
+                    <span class="badge">MATLAB</span><span class="badge">DSP</span>
+                  </div>
+                  <button class="cert-view-btn" data-title="Spectral Analysis Techniques" data-issuer="MATLAB®UCL" data-date="March 2026" data-desc="Completed the Spectral Analysis Techniques course via MATLAB®UCL. Gained proficiency in Discrete Fourier Transform (DFT), Fast Fourier Transform (FFT), periodogram and Welch methods for power spectral density estimation, and windowing techniques. Applied spectral analysis to real-world signals including vibration data and communications signals using MATLAB.">
+                    View Details
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <a class="view-all-link reveal" href="certif.html" style="margin-top:2rem;display:inline-flex">
+              View All Certifications
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"><div class="divider-line"></div></div>
+
+      <!-- ======================== CONTACT ======================== -->
+      <div class="section-wrap">
+        <div class="section-inner">
+          <section id="contact">
+            <h2 class="section-heading reveal">Contact</h2>
+            <p class="section-subtitle reveal reveal-d1">Feel free to reach out for collaborations, opportunities, or just a chat.</p>
+            <div class="contact-btns reveal reveal-d2">
+              <a class="btn-contact btn-contact-primary" href="https://www.linkedin.com/in/abhinav-datta-kaly/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+              <a class="btn-contact btn-contact-outline" href="https://github.com/abhinavdatta/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+              <a class="btn-contact btn-contact-outline" href="mailto:abhi07janamaddi@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-text">&copy; 2026 Abhinav Datta</p>
+      <div class="footer-links">
+        <a class="footer-link" href="privacy.html">Privacy Policy</a>
+        <a class="footer-link" href="certif.html">Certifications</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- RESUME BUTTON (Fixed) -->
+  <button class="resume-btn" id="resume-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+    <span class="btn-text">Resume</span>
+  </button>
+
+  <!-- RESUME MODAL -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-box resume-modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <div class="resume-modal-header">
+        <div class="modal-title">Resume</div>
+        <div class="resume-modal-actions">
+          <a href="ori/resume.pdf" download class="resume-download-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.875rem;height:0.875rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+      <div class="resume-modal-viewer">
+        <iframe id="resume-iframe" src="" title="Resume Viewer"></iframe>
+        <div class="resume-fallback" id="resume-fallback">
+          <div class="resume-fallback-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:3rem;height:3rem;opacity:0.4;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </div>
+          <p class="resume-fallback-text">Resume PDF preview is not available in this view.</p>
+          <a href="ori/resume.pdf" download class="resume-download-btn" style="margin-top:1rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.875rem;height:0.875rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERT DETAIL MODAL -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <div id="cert-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Scripts: theme first, then modules, then main -->
+  <script src="ori/theme.js"></script>
+  <script src="ori/typing.js"></script>
+  <script src="ori/navbar.js"></script>
+  <script src="ori/scroll.js"></script>
+  <script src="ori/github.js"></script>
+  <script src="ori/main.js"></script>
+</body>
+</html>
